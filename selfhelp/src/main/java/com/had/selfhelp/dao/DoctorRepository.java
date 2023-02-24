@@ -6,4 +6,6 @@ import com.had.selfhelp.entity.Doctor;
 
 public interface DoctorRepository extends JpaRepository<Doctor, Integer> {
 
+  Doctor findByUsernameAndPassword(String username, String password);
+  
 }
