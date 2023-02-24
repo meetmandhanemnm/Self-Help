@@ -12,4 +12,6 @@ public interface DoctorService {
 	public Doctor findById(int theId);
 	
 	public List<Patient> findPatients(int theId);
+	
+	public Doctor login(Doctor D);
 }
