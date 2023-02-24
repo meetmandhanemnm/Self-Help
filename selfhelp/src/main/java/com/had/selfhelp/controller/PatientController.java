@@ -54,4 +54,10 @@ public class PatientController {
 	public List<Questionnaire_response> getResponses(@PathVariable(name = "patientId") int patientId) {
 		return patientService.getResponses(patientId);
 	}
+	
+	@PostMapping("/login")
+	public Patient login(@RequestBody Patient p) {
+		return patientService.login(p);
+	}
+	
 }
