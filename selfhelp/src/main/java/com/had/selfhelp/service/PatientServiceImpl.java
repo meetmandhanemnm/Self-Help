@@ -49,5 +49,13 @@ public class PatientServiceImpl implements PatientService {
 	public List<Questionnaire_response> getResponses(int patientId) {
 		return responseRepository.findByPatient(patientRepository.getReferenceById(patientId));
 	}
+	
+	@Override
+	public Patient login(Patient P) {
+		Patient thePatient = patientRepository.findByUsernameAndPassword(P.getUsername(),P.getPassword());
+		if(thePatient==null)
+			throw new RuntimeException("Did not find patient with these credentials");
+		return thePatient;
+	}
 
 }
