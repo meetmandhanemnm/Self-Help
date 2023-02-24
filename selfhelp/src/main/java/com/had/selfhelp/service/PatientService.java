@@ -15,4 +15,6 @@ public interface PatientService {
 	public List<Questionnaire> getQuestions();
 	
 	public List<Questionnaire_response> getResponses(int patientId);
+	
+	public Patient login(Patient P);
 }
