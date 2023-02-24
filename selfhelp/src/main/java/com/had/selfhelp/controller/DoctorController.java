@@ -36,4 +36,10 @@ public class DoctorController {
 	public List<Patient> getPatientList(@PathVariable(name = "doctorId") int doctorId) {
 		return doctorService.findPatients(doctorId);
 	}
+	
+	@PostMapping("/login")
+	public Doctor login(@RequestBody Doctor d) {
+		return doctorService.login(d);
+	}
+
 }
