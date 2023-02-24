@@ -35,4 +35,11 @@ public class DoctorServiceImpl implements DoctorService {
 		return theDoctor.getPatients();
 	}
 
+	@Override
+	public Doctor login(Doctor D) {
+		Doctor theDoctor = doctorRepository.findByUsernameAndPassword(D.getUsername(),D.getPassword());
+		if(theDoctor==null)
+			throw new RuntimeException("Did not find doctor with these credentials");
+		return theDoctor;
+	}
 }
